@@ -1,19 +1,26 @@
 <template>
   <div id="app">
-    <img alt="Vue logo" src="./assets/logo.png" />
-    <HelloWorld msg="Welcome to Your Vue.js App" />
+    <h1>{{ message }}</h1>
   </div>
 </template>
 
 <script>
-import HelloWorld from './components/HelloWorld.vue'
-
 export default {
-  name: 'App',
-  components: {
-    HelloWorld!!
-  }
-}
+  data() {
+    return {
+      message: "Loading...",
+    };
+  },
+  async create() {
+    try {
+      const response = await fetch("/api");
+      const data = await response.json();
+      this.message = "Server Time: ${data[0].now}";
+    } catch (e) {
+      this.message = "Failed to load message";
+    }
+  },
+};
 </script>
 
 <style>
