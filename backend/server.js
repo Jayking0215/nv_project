@@ -9,7 +9,7 @@ const port = 3000;
 const username = 'postgres';
 const password = 'postgres';
 const localhost = 'localhost';
-const db = 'postgresql';
+const db = 'db';
 
 // PostgreSQL
 const pool = new Pool({
