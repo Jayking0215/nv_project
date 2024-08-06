@@ -1,22 +1,27 @@
 import Vue from 'vue';
 import VueRouter from 'vue-router';
-//라우팅 할 주소 추가
-import Home from '../views/Home.vue';
-import About from '../views/About.vue';
+import HomePage from '../views/Home.vue';
+import AboutPage from '../views/About.vue';
+import ContactPage from '../views/Contact.vue';
 
 Vue.use(VueRouter);
 
 const routes = [
-    {
-        path: '/',
-        name: 'Home',
-        component: Home
-    },
-    {
-        path: '/about',
-        name: 'About',
-        component: About
-    },
+  {
+    path: '/',
+    name: 'Home',
+    component: HomePage
+  },
+  {
+    path: '/about',
+    name: 'About',
+    component: AboutPage
+  },
+  {
+    path: '/contact',
+    name: 'Contact',
+    component: ContactPage
+  }
 ];
 
 const router = new VueRouter({

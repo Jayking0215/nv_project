@@ -1,4 +1,3 @@
-<!-- frontend/src/views/Home.vue -->
 <template>
   <div>
     <h1>To-Do List</h1>
@@ -13,11 +12,13 @@
       </li>
     </ul>
     <router-link to="/about">Go to About</router-link>
+    <router-link to="/contact">Go to Contact</router-link>
   </div>
 </template>
 
 <script>
 export default {
+  name: "HomePage",
   data() {
     return {
       newTodo: "",
