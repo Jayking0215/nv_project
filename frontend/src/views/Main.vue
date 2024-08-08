@@ -21,7 +21,7 @@
 
 <script>
 export default {
-  name: "HomePage",
+  name: "MainPage",
   data() {
     return {
       newTodo: "",
