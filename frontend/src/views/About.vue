@@ -6,12 +6,12 @@
     <p>Main.vue 추가; TODO, 각 페이지 이동 link</p>
     <p>Home.vue = CRM의 홈; 각 link, Admin.vue link->login</p>
     <p>Admin.vue; 고객, 문의 등 관리 (미정)</p>
-    <router-link to="/">Go to Home</router-link>
+    <router-link to="/">Go to Main</router-link>
   </div>
 </template>
 
 <script>
 export default {
-  name: "AboutPage",
+  name: "MainPage",
 };
 </script>

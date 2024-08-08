@@ -12,6 +12,8 @@
       </li>
     </ul>
     <div>
+      <router-link to="/main">Go to Main</router-link>
+      &nbsp;
       <router-link to="/about">Go to About</router-link>
       &nbsp;
       <router-link to="/contact">Go to Contact</router-link>
@@ -21,7 +23,7 @@
 
 <script>
 export default {
-  name: "HomePage",
+  name: "MainPage",
   data() {
     return {
       newTodo: "",

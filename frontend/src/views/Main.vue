@@ -12,6 +12,8 @@
       </li>
     </ul>
     <div>
+      <router-link to="/home">Go to Home</router-link>
+      &nbsp;
       <router-link to="/about">Go to About</router-link>
       &nbsp;
       <router-link to="/contact">Go to Contact</router-link>
