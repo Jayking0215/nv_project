@@ -60,6 +60,7 @@
 
 <script>
 export default {
+  name: "AboutPage",
   data() {
     return {
       // 회원가입 필드
