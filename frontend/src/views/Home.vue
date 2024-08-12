@@ -10,8 +10,14 @@
     <router-link to="/contact">Go to Contact</router-link>
     &nbsp;
 
-    <div class="login">
-    
+    <div class="regi">
+      <h2>Register</h2>
+      <form @submit.prevent="register">
+        <input v-model="username" placeholder="Username" required />
+        <input v-model="email" type="email" placeholder="Email" required />
+        <input v-model="password" type="password" placeholder="Password" required />
+        <button type="submit">Register</button>
+      </form>
     </div>
   </div>
 </template>
