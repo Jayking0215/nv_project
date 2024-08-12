@@ -58,6 +58,8 @@ app.delete('/api/todos/:id', async (req, res) => {
   }
 });
 
+// 회원가입
+
 // // test API 엔드포인트
 // app.get('/api', async (req, res) => {
 //   try {

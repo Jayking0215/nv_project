@@ -9,6 +9,10 @@
     &nbsp;
     <router-link to="/contact">Go to Contact</router-link>
     &nbsp;
+
+    <div class="login">
+    
+    </div>
   </div>
 </template>
 

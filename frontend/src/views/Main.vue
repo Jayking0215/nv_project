@@ -1,16 +1,20 @@
 <template>
   <div>
-    <h1>To-Do List</h1>
-    <form @submit.prevent="addTodo">
-      <input v-model="newTodo" placeholder="Enter a new task" required />
-      <button type="submit">Add</button>
-    </form>
-    <ul>
-      <li v-for="todo in todos" :key="todo.id">
-        {{ todo.description }}
-        <button @click="deleteTodo(todo.id)">Delete</button>
-      </li>
-    </ul>
+    <div class="title">
+      <h1>To-Do List</h1>
+    </div>
+    <div>
+      <form @submit.prevent="addTodo">
+        <input v-model="newTodo" placeholder="Enter a new task" required />
+        <button type="submit">Add</button>
+      </form>
+      <ul>
+        <li v-for="todo in todos" :key="todo.id">
+          {{ todo.description }}
+          <button @click="deleteTodo(todo.id)">Delete</button>
+        </li>
+      </ul>
+    </div>
     <div>
       <router-link to="/home">Go to Home</router-link>
       &nbsp;
@@ -20,6 +24,11 @@
     </div>
   </div>
 </template>
+
+<style>
+.title {
+}
+</style>
 
 <script>
 export default {
