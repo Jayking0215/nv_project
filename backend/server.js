@@ -3,6 +3,7 @@ const bodyParser = require('body-parser');
 const express = require('express');
 const { Pool } = require('pg');
 const cors = require('cors');
+const bcrypt = require('bcrypt');
 const app = express();
 const port = 3000;
 
@@ -22,6 +23,27 @@ const pool = new Pool({
 
 app.use(bodyParser.json());
 app.use(cors());
+
+// Hashed Password (bcrypt)
+app.post('/api/register', async (req, res) => {
+  const { username, email, password } = req.body;
+  try {
+    const hashedPassword = await bcrypt.hash(password, 10);
+    const result = await pool.query(
+      'INSERT INTO users (username, email, password) VALUES ($1, $2, $3) RETURNING *',
+      [username, email, hashedPassword]
+    );
+   
+    res.status(201).json({ message: 'User registered successfully', user: result.rows[0] });
+  } catch (error) {
+    console.error('Error executing query', error.stack);
+    res.status(500).json({ error: 'Internal Server Error' });
+  }
+});
+
+app.listen(port, () => {
+  console.log(`Server is running on http://localhost:${port}`);
+});
 
 // TO-DO LIST
 app.get('/api/todos', async (req, res) => {
@@ -57,8 +79,6 @@ app.delete('/api/todos/:id', async (req, res) => {
     res.status(500).json({ error: 'Internal Server Error' });
   }
 });
-
-// 회원가입
 
 // // test API 엔드포인트
 // app.get('/api', async (req, res) => {
