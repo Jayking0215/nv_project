@@ -17,8 +17,16 @@
         <form @submit.prevent="register">
           <input v-model="username" placeholder="Username" required />
           <input v-model="email" type="email" placeholder="Email" required />
-          <input v-model="password" type="password" placeholder="Password" required />
+          <input
+            v-model="password"
+            type="password"
+            placeholder="Password"
+            required
+          />
           <button type="submit">Register</button>
+          <div>
+            <button type="button" @click="goToShop">쇼핑하러가기</button>
+          </div>
         </form>
       </div>
 
@@ -27,7 +35,12 @@
         <h2>Login</h2>
         <form @submit.prevent="login">
           <input v-model="loginUsername" placeholder="Username" required />
-          <input v-model="loginPassword" type="password" placeholder="Password" required />
+          <input
+            v-model="loginPassword"
+            type="password"
+            placeholder="Password"
+            required
+          />
           <button type="submit">Login</button>
         </form>
       </div>
@@ -51,6 +64,9 @@
 <script>
 export default {
   name: "AboutPage",
+  goToShop() {
+    this.$router.push("/shop");
+  },
   data() {
     return {
       // 회원가입 필드
