@@ -10,6 +10,9 @@
       <p>프로젝트 개요</p>
       <p>프로젝트 IA.img 업로드</p>
       <p>시작하기 Btn -> Home.vue로 이동</p>
+      <div>
+        <button type="button" @click="goToHome">시작하기</button>
+      </div>
       <router-link to="/">Go to Main</router-link>
     </div>
   </div>
@@ -25,5 +28,10 @@
 <script>
 export default {
   name: "MainPage",
+  methods: {
+    goToHome() {
+      this.$router.push("/");
+    },
+  },
 };
 </script>
