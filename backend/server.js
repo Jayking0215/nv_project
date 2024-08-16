@@ -65,10 +65,6 @@ app.post('/api/login', async (req, res) => {
   }
 });
 
-app.listen(port, () => {
-  console.log(`Server is running on http://localhost:${port}`);
-});
-
 // TO-DO LIST
 app.get('/api/todos', async (req, res) => {
   try {
