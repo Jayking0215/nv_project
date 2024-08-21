@@ -9,29 +9,41 @@
       <p>Node, Vue Project</p>
       <table>
         <tr>
-          <th>사용언어</th>
-          <th>OS</th>
-          <th>Server</th>
-          <th>Tools</th>
-          <th>CI/CD</th>
-          <th>DBMS</th>
-          <th>개발기간</th>
-          <th>목표</th>
+            <th>사용언어</th>
+            <td>node.js, vue.js, HTML/CSS</td>
         </tr>
         <tr>
-          <td>node.js, vue.js, HTML/CSS</td>
-          <td>MacOS</td>
-          <td>Express.js</td>
-          <td>VSCode</td>
-          <td>Git</td>
-          <td>PostgrSQL, DBeaver</td>
-          <td>2024.06.01 ~ ing</td>
-          <td>
-            <p>
-              Java와 node.js차이 확인하기<br />
-              node=single thread, Spring=Thread in HTTP
-            </p>
-          </td>
+            <th>OS</th>
+            <td>MacOS</td>
+        </tr>
+        <tr>
+            <th>Server</th>
+            <td>Express.js</td>
+        </tr>
+        <tr>
+            <th>Tools</th>
+            <td>VSCode</td>
+        </tr>
+        <tr>
+            <th>CI/CD</th>
+            <td>Git</td>
+        </tr>
+        <tr>
+            <th>DBMS</th>
+            <td>PostgrSQL, DBeaver</td>
+        </tr>
+        <tr>
+            <th>개발기간</th>
+            <td>2024.06.01 ~ ing</td>
+        </tr>
+        <tr>
+            <th>목표</th>
+            <td>
+                <p>
+                    Java와 node.js차이 확인하기<br />
+                    node=single thread, Spring=Thread in HTTP
+                </p>
+            </td>
         </tr>
       </table>
       <p>프로젝트 개요</p>
