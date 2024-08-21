@@ -7,6 +7,7 @@
     <div class="sub_title">
       <p>This is an about page_프로젝트 소개, 안내내용 넣기</p>
       <p>Node, Vue Project</p>
+      <p>**DB에서 가져오는 식으로 변경하기</p>
       <table>
         <tr>
             <th>사용언어</th>
@@ -58,7 +59,6 @@
     </div>
   </div>
 </template>
-
 <style>
 .title {
 }

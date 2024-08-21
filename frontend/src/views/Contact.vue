@@ -1,16 +1,19 @@
 <!-- frontend/src/views/Contact.vue -->
 <template>
   <div>
-    <h1>Contact</h1>
-    <p>This is a contact page.</p>
+    <h1>Admin</h1>
+    <p>This is a ADMIN page.</p>
     <router-link to="/">Go to Main</router-link>
-    <div>
-      <p>채팅 상담</p>
+    <div class="memManage">
+      <p>고객관리</p>
     </div>
-    <div>
-      <p>문의 게시판</p>
-      <p>admin페이지 필요</p>
+    <div class="proManage">
+      <p>상품관리</p>
     </div>
+    <div class="qnaManage">
+      <p>문의관리</p>
+    </div>
+    <p>contact에서 admin으로 변경하기</p>
   </div>
 </template>
 
