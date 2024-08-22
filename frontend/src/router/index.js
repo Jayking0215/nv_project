@@ -5,6 +5,8 @@ import HomePage from '../views/Home.vue';
 import AboutPage from '../views/About.vue';
 import ContactPage from '../views/Contact.vue';
 import ChatPage from '../views/Chat.vue';
+import MyPage from '../views/MyPage.vue';
+
 
 Vue.use(VueRouter);
 
@@ -33,6 +35,11 @@ const routes = [
     path: '/chat',
     name: 'Chat',
     component: ChatPage
+  },
+  {
+    path: '/myPage',
+    name: 'MyPage',
+    component: MyPage
   }
 ];
 
