@@ -21,6 +21,8 @@
       <router-link to="/about">Go to About</router-link>
       &nbsp;
       <router-link to="/contact">Go to Contact</router-link>
+      &nbsp;
+      <router-link to="/chat">Go to Chat</router-link>
     </div>
   </div>
 </template>

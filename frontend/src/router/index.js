@@ -4,6 +4,7 @@ import MainPage from '../views/Main.vue';
 import HomePage from '../views/Home.vue';
 import AboutPage from '../views/About.vue';
 import ContactPage from '../views/Contact.vue';
+import ChatPage from '../views/Chat.vue';
 
 Vue.use(VueRouter);
 
@@ -27,6 +28,11 @@ const routes = [
     path: '/contact',
     name: 'Contact',
     component: ContactPage
+  },
+  {
+    path: '/chat',
+    name: 'Chat',
+    component: ChatPage
   }
 ];
 
