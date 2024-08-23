@@ -25,7 +25,7 @@ const pool = new Pool({
 });
 
 app.use(bodyParser.json());
-app.use(cors());
+app.use(cors());// 모든 출처 허용
 
 // 회원가입 API (bcrypt)
 app.post('/api/register', async (req, res) => {
@@ -103,9 +103,15 @@ app.delete('/api/todos/:id', async (req, res) => {
   }
 });
 
+
 // HTTP 서버 생성 및 Socket.io 설정
 const server = http.createServer(app);
-const io = new Server(server);
+const io = new Server(server, {
+  cors: {
+    origin: 'http://localhost:8080',
+    methods: ["GET", "POST"]
+  }
+});
 
 // Socket.io 이벤트 핸들러 설정
 io.on('connection', (socket) => {
