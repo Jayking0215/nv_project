@@ -4,15 +4,18 @@ const express = require('express');
 const { Pool } = require('pg');
 const cors = require('cors');
 const bcrypt = require('bcrypt');
+const http = require('http');
+const { Server } = require('socket.io');
+
 const app = express();
 const port = 3000;
 
+// PostgreSQL 설정
 const username = 'postgres';
 const password = 'postgres';
 const localhost = 'localhost';
 const db = 'db';
 
-// PostgreSQL
 const pool = new Pool({
   user: username,
   host: localhost,
@@ -100,17 +103,24 @@ app.delete('/api/todos/:id', async (req, res) => {
   }
 });
 
-// // test API 엔드포인트
-// app.get('/api', async (req, res) => {
-//   try {
-//     const result = await pool.query('SELECT NOW()');
-//     res.json(result.rows);
-//   } catch (error) {
-//     console.error('Error executing query', error.stack);
-//     res.status(500).json({ error: 'Internal Server Error' });
-//   }
-// });
+// HTTP 서버 생성 및 Socket.io 설정
+const server = http.createServer(app);
+const io = new Server(server);
 
+// Socket.io 이벤트 핸들러 설정
+io.on('connection', (socket) => {
+  console.log('a user connected');
+  
+  socket.on('chat message', (msg) => {
+    io.emit('chat message', msg);
+  });
+
+  socket.on('disconnect', () => {
+    console.log('user disconnected');
+  });
+});
+
+// server start
 app.listen(port, () => {
   console.log(`Server is running on http://localhost:${port}`);
 });
